@@ -53,3 +53,18 @@ img{
     font-size: 16px;
     top: -34px;
 }
+
+#weather-degree a{
+    text-decoration: none;
+}
+
+.active{
+    color:rgb(135, 135, 135) ;
+    text-decoration: none; 
+}
+
+.active:hover{
+    cursor: default;
+}
+
+

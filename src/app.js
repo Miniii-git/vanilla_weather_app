@@ -18,6 +18,7 @@ function getInformation(response){
 
     let degree = document.querySelector("#degree");
     degree.innerHTML = Math.round(response.data.temperature.current);
+    celciusTemp = Math.round(response.data.temperature.current);
 
     let humidity = document.querySelector("#humidity");
     humidity.innerHTML = response.data.temperature.humidity;
@@ -57,5 +58,35 @@ function getInformation(response){
     }
 }
 
+
+let celciusTemp = null;
+
+function showTempInFahrenheit(event){
+    event.preventDefault();
+    let fahrenheitTemp = (celciusTemp * 9/5) + 32;
+    let degree = document.querySelector("#degree");
+    degree.innerHTML = Math.round(fahrenheitTemp);
+    celcius.classList.remove("active");
+    fahrenheit.classList.add("active");
+
+}
+
+function showTempInCelcius(event){
+    event.preventDefault();
+    let degree = document.querySelector("#degree");
+    degree.innerHTML = Math.round(celciusTemp);
+    fahrenheit.classList.remove("active");
+    celcius.classList.add("active");
+}
+
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit",changecity);
+
+let celcius = document.querySelector("#celcius");
+celcius.addEventListener("click",showTempInCelcius);
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click",showTempInFahrenheit);
+
+sendCityForUrl("New York");
