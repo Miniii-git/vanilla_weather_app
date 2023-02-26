@@ -22,6 +22,10 @@ li {
     line-height: 19px;
 }
 
+img{
+    height: 64px;
+}
+
 .head{
     margin-bottom: 20px;
 }
