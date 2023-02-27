@@ -12,7 +12,6 @@ function sendCityForUrl(city){
 }
 
 function getInformation(response){
-    console.log(response);
     let city = document.querySelector("#city");
     city.innerHTML = response.data.city
 
@@ -27,7 +26,7 @@ function getInformation(response){
     speed.innerHTML = response.data.wind.speed;
 
     let description = document.querySelector("#wea-description");
-    description.innerHTML = capitalize(response.data.condition.description) ;
+    description.innerHTML = response.data.condition.description;
 
     let image = document.querySelector("img")
     image.setAttribute("alt",response.data.condition.icon);
